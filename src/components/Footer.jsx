@@ -22,6 +22,7 @@ const Left = styled.div`
 const Logo = styled.h1``;
 const Description = styled.p`
   margin: 20px 0px;
+  text-align: justify;
 `;
 const SocialContainer = styled.div`
   display: flex;
@@ -71,9 +72,8 @@ const ContactItem = styled.div`
 
 const Payment = styled.div``;
 const PaymentImage = styled.img`
-width: 70px;
-height:90%
-
+  width: 70px;
+  height: 90%;
 `;
 
 const Footer = () => {
@@ -124,7 +124,7 @@ const Footer = () => {
         <Title>Contact</Title>
         <ContactItem>
           <Map style={{ marginRight: "10px" }} />
-          75/2 5th Dorm Izmailovskii Prospekt, Mama Россия
+          75/2 5th Dorm Izmailovskii Prospekt, Мама Россия
         </ContactItem>
         <ContactItem>
           <Phone style={{ marginRight: "10px" }} />

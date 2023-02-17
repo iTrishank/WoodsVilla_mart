@@ -69,7 +69,7 @@ const Navbar = () => {
           <Logo>WOODSVILLA.</Logo>
         </Center>
         <Right>
-          <MenuItems>REGISTOR</MenuItems>
+          <MenuItems>REGISTER</MenuItems>
           <MenuItems>SIGN-IN</MenuItems>
           <MenuItems>
             <Badge badgeContent={4} color="primary">
