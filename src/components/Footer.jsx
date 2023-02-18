@@ -9,9 +9,11 @@ import Email from "@mui/icons-material/MailOutline";
 import paymentMir from "../Assests/paymentMir.png";
 import paymentVisa from "../Assests/paymentVisa.png";
 import paymentMaster from "../Assests/paymentMaster.png";
+import {mobile} from "../responsive"
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection:"column"})}
 `;
 const Left = styled.div`
   flex: 1;
@@ -42,6 +44,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 
 const Title = styled.h3`
@@ -80,7 +83,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>WOODSVILLA.</Logo>
+        <Logo>WOODS.</Logo>
         <Description>
           Welcome to our online handicraft store, where you'll find a unique
           collection of handcrafted products that are made with love and care by
