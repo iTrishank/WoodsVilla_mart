@@ -9,9 +9,9 @@ import { Routes, Route } from "react-router-dom";
 const App = () => {
   return (
     <>
-      <Routes>    
+      <Routes>
         <Route path="/WoodsVilla_mart" element={<Home />} />
-        <Route path="/Register" element={<Register />} />
+        <Route path="/WoodsVilla_mart/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Product" element={<Product />} />

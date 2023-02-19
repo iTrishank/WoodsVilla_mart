@@ -107,7 +107,7 @@ const Navbar = () => {
           >
             REGISTER
           </Link> */}
-          <MenuLink to="/Register" onClick={handleMenuLinkClick}>
+          <MenuLink to="/WoodsVilla_mart/Register" onClick={handleMenuLinkClick}>
             {" "}
             REGISTER
           </MenuLink>
