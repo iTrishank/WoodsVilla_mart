@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -32,7 +33,7 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 25px;
   padding: 5px;
-  ${mobile({ padding:"0px" })}
+  ${mobile({ padding: "0px" })}
 `;
 
 const Input = styled.input`
@@ -57,7 +58,16 @@ const Right = styled.div`
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
-const MenuItems = styled.div`
+const MenuLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 25px;
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+`;
+
+const MenuItems = styled(Link)`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
@@ -65,13 +75,19 @@ const MenuItems = styled.div`
 `;
 
 const Navbar = () => {
+  const history = useNavigate();
+
+  const handleMenuLinkClick = (event) => {
+    history.push(event.target.getAttribute("href"));
+  };
+
   return (
     <Container>
       <Wrapper>
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input placeholder="Search" />{" "}
+            <Input placeholder="Search" />
             <SearchIcon style={{ color: "grey", fontSize: 16 }} />
           </SearchContainer>
         </Left>
@@ -79,10 +95,27 @@ const Navbar = () => {
           <Logo>WOODS.</Logo>
         </Center>
         <Right>
-          <MenuItems>REGISTER</MenuItems>
-          <MenuItems>SIGN-IN</MenuItems>
-          <MenuItems>
-            <Badge badgeContent={4} color="primary">
+          {/* <Link
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              fontSize: "14px",
+              cursor: "pointer",
+              marginLeft: "25px",
+            }}
+            to="/Register"
+          >
+            REGISTER
+          </Link> */}
+          <MenuLink to="/Register" onClick={handleMenuLinkClick}>
+            {" "}
+            REGISTER
+          </MenuLink>
+          <MenuLink to="/Login" onClick={handleMenuLinkClick}>
+            SIGN-IN
+          </MenuLink>
+          <MenuItems to="/Cart" onClick={handleMenuLinkClick}>
+            <Badge badgeContent={69} color="primary">
               <ShoppingCartOutlinedIcon color="action" />
             </Badge>
           </MenuItems>

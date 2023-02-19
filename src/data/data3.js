@@ -40,6 +40,22 @@ const popularProducts = [
     id: 8,
     img: prog_08,
   },
+  {
+    id: 8,
+    img: prog_08,
+  },
+  {
+    id: 8,
+    img: prog_08,
+  },
+  {
+    id: 8,
+    img: prog_08,
+  },
+  {
+    id: 8,
+    img: prog_08,
+  },
 ];
 
 export default popularProducts;

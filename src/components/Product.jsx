@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { Link, useNavigate } from "react-router-dom";
 
 const Info = styled.div`
   opacity: 0;
@@ -22,6 +23,7 @@ const Container = styled.div`
   flex: 1;
   margin: 5px;
   min-width: 280px;
+  max-width:400px;
   height: 350px;
   display: flex;
   align-items: center;
@@ -47,7 +49,7 @@ const Image = styled.img`
   z-index: 2;
 `;
 
-const Icon = styled.div`
+const Icon = styled(Link)`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -57,6 +59,7 @@ const Icon = styled.div`
   justify-content: center;
   margin: 10px;
   transition: all 0.5s ease;
+  color: grey;
   &:hover {
     background-color: #e9f5f5;
     transform: scale(1.1);
@@ -65,18 +68,23 @@ const Icon = styled.div`
 `;
 
 const Product = ({ item }) => {
+  const history = useNavigate();
+
+  const handleMenuLinkClick = (event) => {
+    history.push(event.target.getAttribute("href"));
+  };
   return (
     <Container>
       <Circle />
       <Image src={item.img} />
       <Info>
-        <Icon>
+        <Icon to="/Cart" onClick={handleMenuLinkClick} >
           <ShoppingCartOutlinedIcon />
         </Icon>
-        <Icon>
+        <Icon to="/Product" onClick={handleMenuLinkClick} >
           <SearchOutlinedIcon />
         </Icon>
-        <Icon>
+        <Icon to="/Cart" onClick={handleMenuLinkClick} >
           <FavoriteBorderOutlinedIcon />
         </Icon>
       </Info>

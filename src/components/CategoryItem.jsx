@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { Link, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -29,7 +30,8 @@ const Title = styled.h1`
   margin-bottom: 20px;
 `;
 
-const Button = styled.button`
+const Button = styled(Link)`
+  text-decoration: none;
   border: none;
   padding: 10px;
   background-color: white;
@@ -39,12 +41,19 @@ const Button = styled.button`
 `;
 
 const CategoryItem = ({ item }) => {
+  const history = useNavigate();
+  const handleMenuLinkClick = (event) => {
+    history.push(event.target.getAttribute("href"));
+  };
+
   return (
     <Container>
       <Image src={item.img}></Image>
       <Info>
         <Title>{item.title}</Title>
-        <Button>SHOP NOW</Button>
+        <Button to="/ProductList" onClick={handleMenuLinkClick}>
+          SHOP NOW
+        </Button>
       </Info>
     </Container>
   );

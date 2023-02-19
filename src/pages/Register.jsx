@@ -55,6 +55,7 @@ const Button = styled.button`
 
 const Register = () => {
   return (
+    
     <Container>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>

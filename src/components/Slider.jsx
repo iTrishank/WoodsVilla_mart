@@ -3,8 +3,8 @@ import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import React, { useState } from "react";
 import sliderItems from "../data/data";
-import {mobile} from "../responsive"
-
+import { mobile } from "../responsive";
+import { Link, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  ${mobile({ display:"none"})}
+  ${mobile({ display: "none" })}
 `;
 const Arrow = styled.div`
   width: 50px;
@@ -36,7 +36,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  transition:all 1.5s ease; 
+  transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
@@ -70,14 +70,23 @@ const Description = styled.p`
   font-weight: 500;
   letter-spacing: 3px;
 `;
-const Button = styled.button`
+const Button = styled(Link)`
+  text-decoration: none;
+  color: inherit;
   padding: 10px;
   font-size: 20px;
+  border: 1px solid teal;
   background-color: transparent;
   cursor: pointer;
 `;
 
 const Slider = () => {
+  const history = useNavigate();
+
+  const handleMenuLinkClick = (event) => {
+    history.push(event.target.getAttribute("href"));
+  };
+
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -100,15 +109,16 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Description>{item.description}</Description>
-              <Button>Shop Now</Button>
+              <Button to="/ProductList" onClick={handleMenuLinkClick}>
+                Shop Now
+              </Button>
             </InfoContainer>
           </Slides>
         ))}
-        </Wrapper>
-        <Arrow direction="right" onClick={() => handleClick("right")}>
-          <ArrowRightIcon />
-        </Arrow>
-      
+      </Wrapper>
+      <Arrow direction="right" onClick={() => handleClick("right")}>
+        <ArrowRightIcon />
+      </Arrow>
     </Container>
   );
 };
