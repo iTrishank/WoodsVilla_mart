@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/WoodsVilla_mart/static/js/main.6fe1f8c2.js",
+    "main.js": "/WoodsVilla_mart/static/js/main.544881fd.js",
     "static/media/cat_3.jpg": "/WoodsVilla_mart/static/media/cat_3.2c24e7982ff316e7de3b.jpg",
     "static/media/1.jpg": "/WoodsVilla_mart/static/media/1.43f3a0f7958bea190dfd.jpg",
     "static/media/prog_8.jpg": "/WoodsVilla_mart/static/media/prog_8.6bd19355e72a03b07d70.jpg",
@@ -20,9 +20,9 @@
     "static/media/prog_3.jpg": "/WoodsVilla_mart/static/media/prog_3.a4371d9a52dd4aa9cdfc.jpg",
     "static/media/2.jpg": "/WoodsVilla_mart/static/media/2.1930ffee34a48e4e36f5.jpg",
     "index.html": "/WoodsVilla_mart/index.html",
-    "main.6fe1f8c2.js.map": "/WoodsVilla_mart/static/js/main.6fe1f8c2.js.map"
+    "main.544881fd.js.map": "/WoodsVilla_mart/static/js/main.544881fd.js.map"
   },
   "entrypoints": [
-    "static/js/main.6fe1f8c2.js"
+    "static/js/main.544881fd.js"
   ]
 }
