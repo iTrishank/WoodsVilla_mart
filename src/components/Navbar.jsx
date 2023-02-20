@@ -46,7 +46,12 @@ const Center = styled.div`
   text-align: center;
 `;
 
-const Logo = styled.h1`
+const Logo = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  font-size: 35px;
+  cursor: pointer;
+  margin-left: 25px;
   font-weight: bold;
   ${mobile({ fontSize: "24px", marginLeft: "20px" })}
 `;
@@ -92,7 +97,9 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>WOODS.</Logo>
+          <Logo to="/WoodsVilla_mart" onClick={handleMenuLinkClick}>
+            WOODS.
+          </Logo>
         </Center>
         <Right>
           {/* <Link
@@ -107,8 +114,7 @@ const Navbar = () => {
           >
             REGISTER
           </Link> */}
-          <MenuLink to="/WoodsVilla_mart/Register" onClick={handleMenuLinkClick}>
-            {" "}
+          <MenuLink to="/Register" onClick={handleMenuLinkClick}>
             REGISTER
           </MenuLink>
           <MenuLink to="/Login" onClick={handleMenuLinkClick}>
